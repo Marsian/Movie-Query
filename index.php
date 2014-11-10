@@ -22,6 +22,12 @@
          include( $_GET['page'] );
          echo "</div></div>";
       }
+
+      if ( $_GET['keywords'] ) {
+         echo "<div class=\"container\"><div class=\"jumbotron\">";
+         include( "search.php" );
+         echo "</div></div>";
+      }
    ?>
    <!-- Bootstrap core JavaScript
    ================================================== -->

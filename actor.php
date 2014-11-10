@@ -25,7 +25,7 @@
       {
          $i++;
          if ($i==1) {
-            echo "<td><a href='/~cs143/actordetail.php?actorID=" . $cell. "'>$cell</a></td>";
+            echo "<td><a href='/~cs143/index.php?page=actorDetail.php&actorID=" . $cell. "'>$cell</a></td>";
          } else
             echo "<td>$cell</td>";
          }
