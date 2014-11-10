@@ -1,9 +1,9 @@
 <?php
-   echo "<h2 class=\"sub-header\">Movies</h2><table class='table table-striped'>";
+   echo "<h2 class=\"sub-header\">Actors</h2><table class='table table-striped'>";
    $db_connection = mysql_connect("localhost", "cs143", "");
    mysql_select_db("CS143", $db_connection);
-                  
-   $rs = mysql_query("SELECT * FROM Movie", $db_connection);
+   
+   $rs = mysql_query("SELECT * FROM Actor", $db_connection);
                   
    $numOfField = mysql_num_fields($rs);
                   
@@ -22,17 +22,18 @@
       echo "<tr>";
       $i=0;
       foreach($row as $cell)
-      {	
+      {
          $i++;
          if ($i==1) {
-            echo "<td><a href='/~cs143/moviedetail.php?movieID=" .$cell. "'>$cell</a></td>";
-         } else {
-         echo "<td>$cell</td>";
+            echo "<td><a href='/~cs143/actordetail.php?actorID=" . $cell. "'>$cell</a></td>";
+         } else
+            echo "<td>$cell</td>";
+         }
+         echo "</tr>\n";
       }
-   }
-      echo "</tr>\n";
-   }
-   mysql_close($db_connection);
-   echo "</tbody></table>";
-
+      mysql_close($db_connection);
+      echo "</tbody></table>";
 ?>
+
+
+  

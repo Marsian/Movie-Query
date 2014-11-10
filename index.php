@@ -1,75 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="author" content="Yanxi">
-      <link rel="shortcut icon" href="/~cs143/favicon.ico">
-      <title>Homepage for cs143/project C</title>
+<html>
+   <?php
+      $fd = fopen("head.html", r);
+      $content = fread($fd, filesize("head.html"));
+      fclose($fd);
 
-      <!-- Bootstrap -->
-      <link href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css" rel="stylesheet">
+      echo $content;
+   ?>
 
-      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      <!--[if lt IE 9]>
-         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-   </head>
    <body>
+   <?php
+      $fd = fopen("bar.html", r);
+      $content = fread($fd, filesize("bar.html"));
+      fclose($fd);
 
-      <div class="container">
+      echo $content;
+   ?>
 
-      <!-- Static navbar -->
-      <nav class="navbar navbar-default" role="navigation">
-         <div class="container-fluid">
-            <div class="navbar-header">
-               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-               </button>
-               <a class="navbar-brand" href="/~cs143/index.php">Home</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-               <ul class="nav navbar-nav">
-                  <li><a href="/~cs143/movie.php">Movies</a></li>
-                  <li><a href="/~cs143/actor.php">Actors</a></li>
-                  <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add Information <span class="caret"></span></a>
-                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="addActor.php">Actor</a></li>
-                        <li><a href="addDirector.php">Director</a></li>
-                        <li><a href="addMovie.php">Movie</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="/~cs143/addMovieActor.php">Actor to Movie</a></li>
-                        <li><a href="/~cs143/addMovieDirector.php">Director to Movie</a></li>
-                     </ul>
-                  </li>
-               </ul>
-               <form class="navbar-form navbar-right" role="form" action="/~cs143/search.php">
-                  <div class="form-group">
-                     <input type="text" placeholder="Movie, Actor keywords" class="form-control" name="keywords">
-                  </div>
-                  <button type="submit" class="btn btn-success">Search</button>
-               </form>
-            </div><!--/.nav-collapse -->
-         </div><!--/.container-fluid -->
-      </nav>
-
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-         <h1>Movie Query</h1>
-         <p>Use this website to find your favorite movie or actor. Add your own comments.</p>
-      </div>
-
-   </div> <!-- /container -->
-
-
+   <?php
+      if ( $_GET['page'] ) {
+         echo "<div class=\"container\"><div class=\"jumbotron\">";
+         include( $_GET['page'] );
+         echo "</div></div>";
+      }
+   ?>
    <!-- Bootstrap core JavaScript
    ================================================== -->
    <!-- Placed at the end of the document so the pages load faster -->
@@ -78,4 +31,3 @@
 	<script src="bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
    </body>
 </html>
-  

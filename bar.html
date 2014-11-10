@@ -1,0 +1,43 @@
+      <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default" role="navigation">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="/~cs143/index.php">Home</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+               <ul class="nav navbar-nav">
+                  <li><a href="/~cs143/index.php?page=movie.php">Movies</a></li>
+                  <li><a href="/~cs143/index.php?page=actor.php">Actors</a></li>
+                  <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add Information <span class="caret"></span></a>
+                     <ul class="dropdown-menu" role="menu">
+                        <li><a href="addActor.php">Actor</a></li>
+                        <li><a href="addDirector.php">Director</a></li>
+                        <li><a href="addMovie.php">Movie</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Relations</li>
+                        <li><a href="/~cs143/addMovieActor.php">Actor to Movie</a></li>
+                        <li><a href="/~cs143/addMovieDirector.php">Director to Movie</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <form class="navbar-form navbar-right" role="form" action="/~cs143/search.php">
+                  <div class="form-group">
+                     <input type="text" placeholder="Movie, Actor keywords" class="form-control" name="keywords">
+                  </div>
+                  <button type="submit" class="btn btn-success">Search</button>
+               </form>
+            </div><!--/.nav-collapse -->
+         </div><!--/.container-fluid -->
+      </nav>
+
+
+   </div> <!-- /container -->
