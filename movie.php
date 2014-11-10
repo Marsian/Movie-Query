@@ -5,7 +5,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="author" content="Yanxi">
-      <link rel="shortcut icon" href="/~cs143/favicon.ico">
+      <link rel="icon" href="/~cs143/favicon.ico">
       <title>Homepage for cs143/project C</title>
 
       <!-- Bootstrap -->
@@ -63,9 +63,46 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-         <h1>Movie Query</h1>
-         <p>Use this website to find your favorite movie or actor. Add your own comments.</p>
-      </div>
+			<h2 class="sub-header">Movies</h2>
+            <table class='table table-striped'>
+               <?php
+                  $db_connection = mysql_connect("localhost", "cs143", "");
+                  mysql_select_db("CS143", $db_connection);
+                  
+                  $rs = mysql_query("SELECT * FROM Movie", $db_connection);
+                  
+                  $numOfField = mysql_num_fields($rs);
+                  
+                  /* Print the attributes */
+                  echo "<tr><thead>";
+                  for($i = 0; $i < $numOfField; $i++)
+                  {
+                     $field = mysql_fetch_field($rs);
+                     echo "<th>$field->name</th>";
+                  }
+                  echo "</tr></thead>\n<tbody>";
+                  
+                  /* Print the contents */
+                  while($row = mysql_fetch_row($rs))
+                  {
+                     echo "<tr>";
+                     $i=0;
+                     foreach($row as $cell)
+                     {	
+                        $i++;
+                        if ($i==1) {
+                           echo "<td><a href='/~cs143/moviedetail.php?movieID=" .$cell. "'>$cell</a></td>";
+                        } else {
+                           echo "<td>$cell</td>";
+                        }
+                     }
+                     echo "</tr>\n";
+                  }
+                  mysql_close($db_connection);
+               ?>
+               </tbody>
+           </table>
+		</div>
 
    </div> <!-- /container -->
 
