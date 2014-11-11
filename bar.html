@@ -24,15 +24,16 @@
                         <li><a href="/~cs143/index.php?page=addMovie.php">Movie</a></li>
                         <li class="divider"></li>
                         <li class="dropdown-header">Relations</li>
-                        <li><a href="/~cs143/addMovieActor.php">Actor to Movie</a></li>
-                        <li><a href="/~cs143/addMovieDirector.php">Director to Movie</a></li>
+                        <li><a href="/~cs143/index.php?page=addMovieActor.php">Actor to Movie</a></li>
+                        <li><a href="/~cs143/index.php?page=addMovieDirector.php">Director to Movie</a></li>
                      </ul>
                   </li>
                </ul>
-               <form class="navbar-form navbar-right" role="form" action="/~cs143/index.php?page=search.php">
+               <form class="navbar-form navbar-right" role="form" action="/~cs143/index.php">
                   <div class="form-group">
                      <input type="text" placeholder="Movie, Actor keywords" class="form-control" name="keywords">
                   </div>
+                  <input type="hidden" name="page" value="search.php">
                   <button type="submit" class="btn btn-success">Search</button>
                </form>
             </div><!--/.nav-collapse -->
