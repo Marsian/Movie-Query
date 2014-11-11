@@ -108,7 +108,7 @@
 			{	
 				$i++;
 				if ($i==1) {
-					echo "<td><a href='/~cs143/index.php?page=moviedetail.php&movieID=" .$cell. "'>$cell</a></td>";
+					echo "<td><a href='/~cs143/index.php?page=movieDetail.php&movieID=" .$cell. "'>$cell</a></td>";
 				} else {
 					echo "<td>$cell</td>";
 				}
@@ -138,7 +138,7 @@
 			{	
 				$i++;
 				if ($i==1) {
-					echo "<td><a href='/~cs143/index.php?page=moviedetail.php&movieID=" .$cell. "'>$cell</a></td>";
+					echo "<td><a href='/~cs143/index.php?page=movieDetail.php&movieID=" .$cell. "'>$cell</a></td>";
 				} else {
 					echo "<td>$cell</td>";
 				}
