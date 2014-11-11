@@ -1,2 +1,6 @@
 This is the final part of the Movie Database project.
-Create a fully functioning Movie Database system accessed by users exclusively through a Web interface. 
+
+In this project, I create a fully functioning Movie Database system accessed by users 
+exclusively through a web interface. This website is built based on bootstrap. 
+
+The index.php generates all the pages.
