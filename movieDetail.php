@@ -34,7 +34,7 @@
 			$actor = mysql_fetch_row($actorQuery);
 			$last = $actor[1];
 			$first = $actor[2];
-			echo "<a href=/~cs143/actordetail.php?actorID=".$aid.">".$first ." ". $last . "</a></p>\n";
+			echo "<a href=/~cs143/index.php?page=actorDetail.php&actorID=".$aid.">".$first ." ". $last . "</a></p>\n";
 		}
 		echo "</div></div>";
 		

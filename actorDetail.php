@@ -31,7 +31,7 @@
 			
 			$movieQuery = mysql_query("select title from Movie where id=".$mid, $db_connection);
 			$title = mysql_fetch_row($movieQuery);
-			echo "<a href=/~cs143/moviedetail.php?movieID=".$mid.">".$title[0]."</a></p>\n";
+			echo "<a href=/~cs143/index.php?page=movieDetail.php&movieID=".$mid.">".$title[0]."</a></p>\n";
 		}
 		echo "</div></div>";
 		mysql_close($db_connection);
